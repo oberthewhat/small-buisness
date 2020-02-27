@@ -8,3 +8,34 @@
   width: 100%;
 }
 
+.nav-list-item {
+  margin: auto 20px;
+  list-style: none;
+}
+
+.nav-list-item:hover {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.detailCardContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}

@@ -15,7 +15,6 @@ const useStyles = makeStyles({
   },
 });
 
-const rows = []
 
 const Listings = (props) => {
 	const classes = useStyles();
@@ -33,7 +32,7 @@ const Listings = (props) => {
 				</TableRow>
 			</TableHead>
 			<TableBody>
-				{props.place.map(row => (
+				{props.place.map((row, idx)=> (
 					<TableRow key={row.name}>
 						<TableCell component="th" scope="row">
 							<Link to={`/place/${row.id}`}>

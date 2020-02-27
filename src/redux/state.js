@@ -1,8 +1,4 @@
 export default {
-	user: {
-		username: 'test-user',
-		email: 'test-email@example.com'
-	},
 	place: [
 		{
 			"id": 1,
@@ -27,10 +23,10 @@ export default {
 		},
 		{
 			"id": 4,
-			"name": "Thundercloud Subs",
-			"description": "A local sandwich shop",
-			"hours": "11 - 10",
-			"address": "201 E Riverside Drive, Austin, TX 78704"
+			"name": "H-E-B",
+			"description": "Grocery Store",
+			"hours": "7a - 12p",
+			"address": "2508 East Riverside Dr. Austin, TX 78741"
 		},
 	]
 }

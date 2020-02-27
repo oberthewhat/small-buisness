@@ -25,8 +25,12 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             Austin Small Buisness App
           </Typography>
+          <li className="nav-list-item">
           <Link to="/Listings">Listings</Link>
-          <Link to="/access">Login</Link>
+          </li>
+          <li className="nav-list-item">
+          <Link to="/access" color="inherit">Login</Link>
+          </li>
         </Toolbar>
       </AppBar>
     </div>
