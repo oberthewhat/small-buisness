@@ -6,8 +6,13 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-		minWidth: "50%",
+    minWidth: "50%",
+    maxWidth: "75%"
 		
+  },
+  header: {
+    fontSize: 25,
+    textDecoration: "underline"
   },
   bullet: {
     display: 'inline-block',
@@ -37,17 +42,17 @@ const useStyles = makeStyles({
 const Details = (props) => {
 	const classes = useStyles();
 	const id = props.match.params.id
-	const place = props.place.find(c => c.id == id)
+  const place = props.place.find(c => c.id == id)
+  const deets = props.deets.find(c => c.id == id)
 	return(
 		<div className="detailCardContainer">
      <Card className={classes.root}>
-			  {Object.keys(place).map((deets, idx) => {
-          return (
 					<div>
-					<Typography>{`${place[deets]}`}</Typography>
-					
+					<Typography className={classes.header}>{`${place.name}`}</Typography>
+          <Typography>{`${place.hours}`}</Typography>
+          <Typography>{`${place.address}`}</Typography>
+          <Typography>{`${deets.details}`}</Typography>
 					</div>
-				)})}
         <div id="map"></div>
 			</Card>
 		</div>

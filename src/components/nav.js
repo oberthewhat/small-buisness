@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function ButtonAppBar() {
+export default function Nav(props) {
   const classes = useStyles();
 
   return (
@@ -29,7 +29,7 @@ export default function ButtonAppBar() {
           <Link to="/Listings">Listings</Link>
           </li>
           <li className="nav-list-item">
-          <Link to="/access" color="inherit">Login</Link>
+          <Link to="/access">LogIn</Link>
           </li>
         </Toolbar>
       </AppBar>

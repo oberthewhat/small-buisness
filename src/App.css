@@ -39,3 +39,16 @@ a {
   height: 400px;
   background-color: grey;
 }
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.addButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
