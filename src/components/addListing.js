@@ -24,11 +24,14 @@ class AddListing extends Component {
         this.setState(newState)
     }
 
+
+    //this.props.updatePlace is not a function
     handleSubmit = (e) => {
         e.preventDefault()
         const payload = { ...this.state }
         payload.id = this.props.placeTotal + 1
         delete payload.open
+        console.log("The Place", this.props)
         this.props.updatePlace(payload)
         this.setState({ open: false })
     }

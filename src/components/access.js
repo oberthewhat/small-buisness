@@ -42,6 +42,7 @@ const Access = (props) => {
     e.preventDefault()
     document.cookie = 'loggedIn=true;max-age = 60*1000'
     props.user(username)
+    props.user(password)
     history.push("/Listings")
   }
   return (
@@ -62,6 +63,7 @@ const Access = (props) => {
               className={classes.text}
             />
             <TextField
+              required
               id="outlined-password-input"
               label="Password"
               type="password"

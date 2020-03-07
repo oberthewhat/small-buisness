@@ -3,7 +3,7 @@ import { combineReducers } from 'redux'
 const place = (state = [], action) => {
 	switch (action.type) {
 		case 'ADD_PLACE':
-			return [...state, action.value]
+			return [...state, action.value ]
 		case 'REMOVE_PLACE':
 			const place = [...state]
 			place.splice(action.value, 1)

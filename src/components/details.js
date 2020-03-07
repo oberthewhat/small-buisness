@@ -2,13 +2,29 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
+import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps'
+  
 
+
+function Map() {
+  return (
+  <GoogleMap
+    defaultZoom={16}
+    defaultCenter={{ lat: Number(`${lat}`), lng: Number(`${lng}`) }} 
+  >
+    <Marker
+    key={eyedee}
+    position={{ lat: Number(`${lat}`), lng: Number(`${lng}`) }}/>
+  </GoogleMap>)
+}
+
+const WrappedMap = withScriptjs(withGoogleMap(Map))
 
 const useStyles = makeStyles({
   root: {
     minWidth: "50%",
     maxWidth: "75%"
-		
+
   },
   header: {
     fontSize: 25,
@@ -27,37 +43,40 @@ const useStyles = makeStyles({
   },
 });
 
-// function initMap() {
-//   // The location of Uluru
-//   var uluru = {lat: -25.344, lng: 131.036};
-//   // The map, centered at Uluru
-//   var map = new google.maps.Map(
-//       document.getElementById('map'), {zoom: 4, center: uluru});
-//   // The marker, positioned at Uluru
-//   var marker = new google.maps.Marker({position: uluru, map: map});
-// }
-
-
+var lat;
+var lng;
+var eyedee;
 
 const Details = (props) => {
-	const classes = useStyles();
-	const id = props.match.params.id
-  const place = props.place.find(c => c.id == id)
-  const deets = props.deets.find(c => c.id == id)
-	return(
-		<div className="detailCardContainer">
-     <Card className={classes.root}>
-					<div>
-					<Typography className={classes.header}>{`${place.name}`}</Typography>
-          <Typography>{`${place.hours}`}</Typography>
-          <Typography>{`${place.address}`}</Typography>
-          <Typography>{`${deets.details}`}</Typography>
-					</div>
-        <div id="map"></div>
-			</Card>
-		</div>
+  const classes = useStyles();
+  const id = props.match.params.id
+  const place = props.place.find(c => c.id === Number(id))
+  const deets = props.deets.find(c => c.id === Number(id))
+  lat = deets.lat;
+  lng = deets.lng;
+  eyedee = deets.id;
+  return (
+    
+    <div className="detailCardContainer">
+      <Card className={classes.root}>
+        <div>
+          <Typography className={classes.header}>{`${place.name}`}</Typography><br/>
+          <Typography>{`${place.hours}`}</Typography><br/>
+          <Typography>{`${place.address}`}</Typography><br/>
+          <Typography>{`${deets.details}`}</Typography><br/>
+        </div>
+        <div style={{width: '100%', height: '50vh'}}>
+          <WrappedMap
+            googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyA_ru3F_aRvWek6L40K3adwGXgHwVkfIlg'}
+            loadingElement={<div style={{height: '100%'}} />}
+            containerElement={<div style={{height: '100%'}} />}
+            mapElement={<div style={{height: '100%'}} />}
+            />
+        </div>
+      </Card>
+    </div>
 
-	)
+  )
 }
 
 

@@ -4,7 +4,7 @@ import Details from '../components/details'
 const mapStateToProps = (state) => {
 	return {
 			place: state.place,
-			deets: state.deets
+			deets: state.deets,
 	}
 }
 

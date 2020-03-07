@@ -6,6 +6,7 @@ export const user = (username) => {
 }
 
 export const updatePlace = (place) => {
+	console.log("IN ACTIONS", place)
 	return {
 		type: "ADD_PLACE",
 		value: place
