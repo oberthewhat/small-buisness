@@ -5,7 +5,6 @@ const mapStateToProps = (state) => {
 	return {
 			username: state.username,
 			password: state.password,
-			loggedIn: false,
 			}
 }
 export default connect(mapStateToProps)(Nav)

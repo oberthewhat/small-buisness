@@ -17,7 +17,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function Nav(props) {
   const classes = useStyles();
-
   return (
     <div>
       <AppBar position="relative">

@@ -28,7 +28,6 @@ const Listings = (props) => {
 	const classes = useStyles();
 	return (
 		<div className="tableCont">
-				{props.user.username &&	<h4>Welcome, {props.user.username}</h4>}
 			<TableContainer component={Paper}>
 				<Table className={classes.table} aria-label="simple table">
 					<TableHead>
